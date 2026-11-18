@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Storyboard | Mar Aguilar Serrats | MAGU</title>
-
-    
     <meta name="description" content="Storyboards, animatics and visual storytelling by Mar Aguilar Serrats (MAGU), including Entre Mesas and class assignments.">
     <meta property="og:title" content="Storyboard | Mar Aguilar Serrats | MAGU">
     <meta property="og:description" content="Storyboards, animatics and visual storytelling by Mar Aguilar Serrats (MAGU), including Entre Mesas and class assignments.">
@@ -17,122 +13,58 @@
     <meta name="twitter:description" content="Storyboards, animatics and visual storytelling by Mar Aguilar Serrats (MAGU), including Entre Mesas and class assignments.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-
-    <!-- NAVIGATION -->
+<body data-page="storyboard">
     <div id="navbar"></div>
 
-    <!-- HERO -->
     <section class="page-hero" id="main">
-
-        <span class="hero-label">
-            Visual Storytelling
-        </span>
-
-        <h1>
-            Storyboard
-        </h1>
-
-        <p>
-            Visual storytelling through cinematic composition,
-            shot planning and sequential art.
-        </p>
-
+        <span class="hero-label" data-i18n="sb.label">Visual Storytelling</span>
+        <h1 data-i18n="sb.h1">Storyboard</h1>
+        <p data-i18n="sb.lead">Visual storytelling through cinematic composition, shot planning and sequential art.</p>
     </section>
 
-    <!-- ABOUT -->
-    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <!-- <h2 class="section-title"> My Approach </h2> -->
-        <p class="text-xl text-zinc-600 leading-relaxed"> A collection of storyboard exercises, animatics and visual
-            storytelling projects focused on cinematic composition, shot planning, staging and narrative clarity. </p>
-
-    </section>
-
-    <!-- PROJECTS -->
-
-    <section class="max-w-7xl mx-auto px-6 pb-24">
-
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <!-- ENTRE MESAS -->
-
-            <a href="entre-mesas.html" class="project-link">
-
-                <article class="project-card">
-
-                    <img src="images/Storyboard/entre_mesas_ref_edited.jpeg" alt="Entre Mesas Storyboard"
-                        class="project-image">
-
-                    <div class="p-8">
-
-                        <span class="tag">
-                            STORYBOARD SERIES
-                        </span>
-
-                        <h3 class="mt-4 text-3xl font-bold">
-                            ENTRE MESAS
-                        </h3>
-
-                        <p class="mt-4">
-                            Episodic series about the life of a server
-                            in a high-demand chicken restaurant and the
-                            challenges of working in a demanding environment.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </a>
-
-            <!-- CLASS ASSIGNMENTS -->
-
-            <a href="stb-assignments.html" class="project-link">
-
-                <article class="project-card">
-
-                    <img src="images/Storyboard/class-assignments.png" alt="Class Assignments" class="project-image">
-
-                    <div class="p-8">
-
-                        <span class="tag">
-                            EXERCISES
-                        </span>
-
-                        <h3 class="mt-4 text-3xl font-bold">
-                            STB ASSIGNMENTS
-                        </h3>
-
-                        <p class="mt-4">
-                            Storyboard exercises, masterclass assignments,
-                            shot planning studies and cinematic storytelling
-                            practice.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </a>
-
+    <section class="section">
+        <div class="wrap--m reveal">
+            <p class="lede" data-i18n="sb.intro">A collection of storyboard exercises, animatics and visual storytelling projects focused on cinematic composition, shot planning, staging and narrative clarity.</p>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
+    <section class="section--bottom">
+        <div class="wrap">
+            <div class="project-grid">
+            <a href="entre-mesas.html" class="project-card reveal">
+                <picture>
+                <source type="image/webp" srcset="images/Storyboard/entre_mesas_ref_edited.webp">
+                <img src="images/Storyboard/entre_mesas_ref_edited.jpeg" alt="Entre Mesas storyboard" width="358" height="212" loading="lazy" data-i18n-alt="alt.entreSb" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="sb.entre.tag">Storyboard Series</span>
+                    <h3 data-i18n="sb.entre.title">Entre Mesas</h3>
+                    <p data-i18n="sb.entre.body">Episodic series about the life of a server in a high-demand chicken restaurant and the challenges of working in a demanding environment.</p>
+                </div>
+            </a>
+
+            <a href="stb-assignments.html" class="project-card reveal">
+                <picture>
+                <source type="image/webp" srcset="images/Storyboard/class-assignments.webp">
+                <img src="images/Storyboard/class-assignments.png" alt="Class assignments" width="358" height="212" loading="lazy" data-i18n-alt="alt.assignments" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="sb.assign.tag">Exercises</span>
+                    <h3 data-i18n="sb.assign.title">STB Assignments</h3>
+                    <p data-i18n="sb.assign.body">Storyboard exercises, masterclass assignments, shot planning studies and cinematic storytelling practice.</p>
+                </div>
+            </a>
+            </div>
+        </div>
+    </section>
     <div id="footer"></div>
 
-    <script src="js/components.js"></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/ui.js" defer></script>
 </body>
-
 </html>

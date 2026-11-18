@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Story-Telling | Mar Aguilar Serrats | MAGU</title>
-
-    
     <meta name="description" content="Original series, short films and feature concepts by Mar Aguilar Serrats (MAGU), including Mayra, Keeper of the Vinyl and Entre Mesas.">
     <meta property="og:title" content="Story-Telling | Mar Aguilar Serrats | MAGU">
     <meta property="og:description" content="Original series, short films and feature concepts by Mar Aguilar Serrats (MAGU), including Mayra, Keeper of the Vinyl and Entre Mesas.">
@@ -18,217 +13,105 @@
     <meta name="twitter:description" content="Original series, short films and feature concepts by Mar Aguilar Serrats (MAGU), including Mayra, Keeper of the Vinyl and Entre Mesas.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-
-    <!-- NAVIGATION -->
+<body data-page="storytelling">
     <div id="navbar"></div>
 
-    <!-- HERO -->
     <section class="page-hero" id="main">
-        <div class="page-hero-content"> <span class="hero-label"> Story Development </span>
-            <h1> Story-Telling </h1>
-            <p> Original series, short films and feature film concepts,
-                accompanied by character development, worldbuilding
-                and visual exploration. </p>
-        </div>
-
+        <span class="hero-label" data-i18n="st.label">Story Development</span>
+        <h1 data-i18n="st.h1">Story-Telling</h1>
+        <p data-i18n="st.lead">Original series, short films and feature film concepts, accompanied by character development, worldbuilding and visual exploration.</p>
     </section>
 
-    <!-- PROJECTS -->
-
-    <section class="max-w-7xl mx-auto px-6 py-24">
-
-        <h2 class="section-title">
-            Featured Projects
-        </h2>
-
-        <div class="grid lg:grid-cols-2 gap-10">
-
-            <!-- MAYRA -->
-
-            <a href="mayra.html" class="project-card relative block text-inherit no-underline">
-                <img src="images/Story-Telling/mayra_ref_edited.png" alt="Mayra">
-
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        MAYRA, KEEPER OF THE VINYL
-                    </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        Mayra is a writing major student whose soul gets tied to a vinyl disc after listening to it.
-                        She
-                        will now be fighting devils and creatures of the underworld against her will in order to
-                        keep
-                        Satan from escaping the depths of hell. All with the help of an angel with a gun.
-                    </p>
-
+    <section class="section">
+        <div class="wrap">
+            <h2 class="section-title reveal" data-i18n="st.featured">Featured Projects</h2>
+            <div class="project-grid">
+            <a href="mayra.html" class="project-card reveal">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/mayra_ref_edited.webp">
+                <img src="images/Story-Telling/mayra_ref_edited.png" alt="Mayra" width="1432" height="1200" loading="lazy" data-i18n-alt="alt.mayra" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.mayra.title">Mayra, Keeper of the Vinyl</h3>
+                    <p data-i18n="st.mayra.body">Mayra is a writing major student whose soul gets tied to a vinyl disc after listening to it. She will now be fighting devils and creatures of the underworld against her will in order to keep Satan from escaping the depths of hell. All with the help of an angel with a gun.</p>
                 </div>
-
             </a>
 
-            <!-- ENTRE MESAS -->
-
-            <a href="entre-mesas.html" class="project-card relative block text-inherit no-underline">
-                <img src="images/Story-Telling/entre_mesas_ref_edited.jpeg" alt="Entre Mesas" class="project-image">
-
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        ENTRE MESAS
-                    </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        Episodic series about the life of a server in a high demand chicken restaurant, and the
-                        issues
-                        within the company.
-                        Sara has spent her last three summers working in the same restaurant with rotating staff.
-                        This
-                        is the story about how she survived.
-                    </p>
-
+            <a href="entre-mesas.html" class="project-card reveal">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/entre_mesas_ref_edited.webp">
+                <img src="images/Story-Telling/entre_mesas_ref_edited.jpeg" alt="Entre Mesas" width="1432" height="1200" loading="lazy" data-i18n-alt="alt.entre" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.entre.title">Entre Mesas</h3>
+                    <p data-i18n="st.entre.body">Episodic series about the life of a server in a high demand chicken restaurant, and the issues within the company. Sara has spent her last three summers working in the same restaurant with rotating staff. This is the story about how she survived.</p>
                 </div>
-
             </a>
 
-            <!-- ROBOT RIOTS -->
-
-            <article class="project-card relative">
-
-                <img src="images/Story-Telling/wip.png" alt="Work In Progress" class="wip-tag">
-
-                <img src="images/Story-Telling/robot_riots_edited.png" alt="Robot Riots" class="project-image">
-
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        ROBOT RIOTS
-                    </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        Anna, 13, the daughter of a mech fighter, enters a robot competition to gain the approval
-                        and
-                        attention of her dad.
-                    </p>
-
+            <article class="project-card reveal">
+                <img src="images/Story-Telling/wip.png" alt="Work in progress" width="152" height="102" class="wip-tag" data-i18n-alt="alt.wip">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/robot_riots_edited.webp">
+                <img src="images/Story-Telling/robot_riots_edited.png" alt="Robot Riots" width="358" height="300" loading="lazy" data-i18n-alt="alt.robot" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.robot.title">Robot Riots</h3>
+                    <p data-i18n="st.robot.body">Anna, 13, the daughter of a mech fighter, enters a robot competition to gain the approval and attention of her dad.</p>
                 </div>
-
             </article>
 
-            <!-- LOVE IGNITION -->
-
-            <article class="project-card relative">
-
-                <img src="images/Story-Telling/wip.png" alt="Work In Progress" class="wip-tag">
-
-                <img src="images/Story-Telling/love_ignition_edited.jpeg" alt="Love Ignition" class="project-image">
-
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        LOVE IGNITION
-                    </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        Soldiers are sent to a foreign land where they are to fight enemy troops. One of the
-                        soldiers,
-                        amidst the chaos, gets separated from their comrades and finds himself in a beautiful
-                        vegetative
-                        land where he finds the god who habits the area
-                    </p>
-
+            <article class="project-card reveal">
+                <img src="images/Story-Telling/wip.png" alt="Work in progress" width="152" height="102" class="wip-tag" data-i18n-alt="alt.wip">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/love_ignition_edited.webp">
+                <img src="images/Story-Telling/love_ignition_edited.jpeg" alt="Love Ignition" width="358" height="300" loading="lazy" data-i18n-alt="alt.love" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.love.title">Love Ignition</h3>
+                    <p data-i18n="st.love.body">Soldiers are sent to a foreign land where they are to fight enemy troops. One of the soldiers, amidst the chaos, gets separated from their comrades and finds himself in a beautiful, vegetated land where he finds the god who inhabits the area.</p>
                 </div>
-
             </article>
 
-            <!-- BUTTONS -->
-
-            <article class="project-card relative">
-
-                <img src="images/Story-Telling/wip.png" alt="Work In Progress" class="wip-tag">
-
-                <img src="images/Story-Telling/yodmayor_edited.jpeg" alt="Buttons" class="project-image">
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        BUTTONS </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        In a world where any job is possible, and where ordain jobs have a magic twist to them,
-                        Sara, a
-                        24 year old must re-enter the Job hall, in search for a new passion, after having lost hers.
-                        For
-                        the 47th time.
-                    </p>
-
+            <article class="project-card reveal">
+                <img src="images/Story-Telling/wip.png" alt="Work in progress" width="152" height="102" class="wip-tag" data-i18n-alt="alt.wip">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/yodmayor_edited.webp">
+                <img src="images/Story-Telling/yodmayor_edited.jpeg" alt="Buttons" width="358" height="300" loading="lazy" data-i18n-alt="alt.buttons" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.buttons.title">Buttons</h3>
+                    <p data-i18n="st.buttons.body">In a world where any job is possible, and where ordinary jobs have a magic twist to them, Sara, a 24 year old, must re-enter the Job hall, in search for a new passion, after having lost hers. For the 47th time.</p>
                 </div>
-
             </article>
 
-            <!-- ZOMBIE ROCKERZ -->
-
-            <article class="project-card relative">
-
-                <img src="images/Story-Telling/wip.png" alt="Work In Progress" class="wip-tag">
-
-                <img src="images/Story-Telling/zombie-rockers.jpeg" alt="Zombie Rockers" class="project-image">
-
-                <div class="p-8">
-
-                    <span class="tag">
-                        FEATURE PROJECT
-                    </span>
-
-                    <h3 class="text-3xl font-bold mt-4">
-                        ZOMBIE ROCKERZ
-                    </h3>
-
-                    <p class="mt-4 text-zinc-600 leading-relaxed">
-                        A group of teenagers, faced with the end of the world, throw one last epic concert, for the
-                        living dead, with the hidden mission of occupying the zombie horde.
-                    </p>
-
+            <article class="project-card reveal">
+                <img src="images/Story-Telling/wip.png" alt="Work in progress" width="152" height="102" class="wip-tag" data-i18n-alt="alt.wip">
+                <picture>
+                <source type="image/webp" srcset="images/Story-Telling/zombie-rockers.webp">
+                <img src="images/Story-Telling/zombie-rockers.jpeg" alt="Zombie Rockers" width="358" height="300" loading="lazy" data-i18n-alt="alt.zombie" class="project-image">
+            </picture>
+                <div class="card-body">
+                    <span class="tag" data-i18n="st.tag">Featured Project</span>
+                    <h3 data-i18n="st.zombie.title">Zombie Rockerz</h3>
+                    <p data-i18n="st.zombie.body">A group of teenagers, faced with the end of the world, throw one last epic concert, for the living dead, with the hidden mission of occupying the zombie horde.</p>
                 </div>
-
             </article>
-
+            </div>
         </div>
-
     </section>
-
-    <!-- FOOTER -->
     <div id="footer"></div>
-    <script src="js/components.js"></script>
-</body>
 
+    <script src="js/i18n.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/ui.js" defer></script>
+</body>
 </html>

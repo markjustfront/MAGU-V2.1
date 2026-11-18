@@ -2,7 +2,7 @@
 
 A modern portfolio website for **Mar Aguilar Serrats (MAGU)**, showcasing her work as a:
 
-- 3D Animator
+- 2D Animator
 - Story Artist
 - Storyteller
 - Visual Development Artist
@@ -50,9 +50,8 @@ The website highlights animation projects, storytelling work, storyboards, conce
 
 - HTML5
 - CSS3
-- Tailwind CSS
-- Font Awesome
-- Google Fonts (Space Grotesk)
+- Self-hosted Space Grotesk
+- Inline / SVG icons
 
 ---
 

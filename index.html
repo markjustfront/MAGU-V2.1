@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Mar Aguilar Serrats | MAGU</title>
-
-    
     <meta name="description" content="Portfolio of Mar Aguilar Serrats (MAGU): animation, story art, storytelling and visual development.">
     <meta property="og:title" content="Mar Aguilar Serrats | MAGU">
     <meta property="og:description" content="Portfolio of Mar Aguilar Serrats (MAGU): animation, story art, storytelling and visual development.">
@@ -17,163 +13,112 @@
     <meta name="twitter:description" content="Portfolio of Mar Aguilar Serrats (MAGU): animation, story art, storytelling and visual development.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-
-    <!-- NAVIGATION -->
+<body data-page="home">
     <div id="navbar"></div>
 
-    <!-- HERO -->
     <header class="hero-video" id="main">
-
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline preload="metadata" poster="images/Home/hero-poster.jpg">
+            <source src="videos/hero-video.webm" type="video/webm">
             <source src="videos/hero-video.mp4" type="video/mp4">
         </video>
-
         <div class="overlay"></div>
-
         <div class="hero-content">
-
-            <h1 class="sr-only">Mar Aguilar Serrats, MAGU</h1>
-
-            <img src="images/Home/mayra.png" alt="Mar Aguilar Serrats" class="hero-avatar">
-
-            <img src="images/Home/magu.png" alt="MAGU" class="hero-logo">
-
-            <p class="hero-subtitle">
-                2D Animator • Story Artist • Storyteller
-            </p>
-
-            <p class="hero-description">
-                Creating characters, stories and worlds through
-                animation, visual development and storytelling. </p>
-
+            <h1 class="sr-only" data-i18n="home.h1">Mar Aguilar Serrats, MAGU</h1>
+            <picture>
+                <source type="image/webp" srcset="images/Home/mayra.webp">
+                <img src="images/Home/mayra.png" alt="Mar Aguilar Serrats" width="512" height="512" loading="eager" fetchpriority="high" data-i18n-alt="alt.avatar" class="hero-avatar">
+            </picture>
+            <picture>
+                <source type="image/webp" srcset="images/Home/magu.webp">
+                <img src="images/Home/magu.png" alt="MAGU" width="300" height="155" loading="eager" fetchpriority="high" data-i18n-alt="alt.logo" class="hero-logo">
+            </picture>
+            <p class="hero-subtitle" data-i18n="home.subtitle">2D Animator • Story Artist • Storyteller</p>
+            <p class="hero-description" data-i18n="home.desc">Creating characters, stories and worlds through animation, visual development and storytelling.</p>
             <a href="#portfolios" class="hero-button">
-                <i class="fas fa-arrow-right"></i> 
-                VIEW MY WORK </a>
+                <svg class="icon" aria-hidden="true"><use href="icons.svg#icon-arrow-right"></use></svg>
+                <span data-i18n="home.cta">View my work</span>
+            </a>
         </div>
     </header>
 
-    <!-- ABOUT -->
-    <section class="max-w-5xl mx-auto px-6 py-24 text-center">
-        <h2 class="text-4xl font-bold mb-8">
-            Hi, I'm Mar.
-        </h2>
-
-        <p class="text-xl text-zinc-600 leading-relaxed">
-            I'm a 3D animator and storyteller from Girona,
-            passionate about creating expressive characters,
-            compelling narratives and memorable visual experiences.
-        </p>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolios" class="max-w-7xl mx-auto px-6 pb-24">
-        <h2 class="section-title">
-            PORTFOLIOS
-        </h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-            <!-- ANIMATION -->
-            <a href="animation.html" class="portfolio-card">
-
-                <div class="aspect-video overflow-hidden">
-                    <img src="images/Animations/animation.jpg" alt="Animation Portfolio">
-                </div>
-
-                <div class="p-6">
-
-                    <span class="tag">ANIMATION</span>
-
-                    <h3>Animation Portfolio</h3>
-
-                    <p>Latest demo reel and current projects.</p>
-                </div>
-            </a>
-
-            <!-- STORY-TELLING -->
-
-            <a href="story-telling.html" class="portfolio-card">
-
-                <div class="aspect-video overflow-hidden">
-                    <img src="images/Story-Telling/mayra_ref_edited.png" alt="Storytelling">
-                </div>
-
-                <div class="p-6">
-
-                    <span class="tag">STORY-TELLING</span>
-
-                    <h3>Story-Telling</h3>
-
-                    <p>Writing and narrative development.</p>
-
-                </div>
-
-            </a>
-
-            <!-- STORYBOARD -->
-
-            <a href="storyboard.html" class="portfolio-card">
-
-                <div class="aspect-video overflow-hidden">
-                    <img src="images/Storyboard/entre_mesas_ref_edited.jpeg" alt="Storyboard">
-                </div>
-
-                <div class="p-6">
-
-                    <span class="tag">STORYBOARD</span>
-
-                    <h3>Storyboard</h3>
-
-                    <p>Storyboards and visual planning.</p>
-                </div>
-            </a>
-
-            <!-- ART -->
-            <a href="art.html" class="portfolio-card">
-
-                <div class="aspect-video overflow-hidden">
-                    <img src="images/Art/art9.png" alt="Art">
-                </div>
-
-                <div class="p-6">
-
-                    <span class="tag">ART</span>
-
-                    <h3>Art Portfolio</h3>
-
-                    <p>Illustrations, concepts and visual work.</p>
-
-                </div>
-
-            </a>
-
+    <section class="section about">
+        <div class="wrap--s reveal">
+            <h2 data-i18n="home.hello">Hi, I’m Mar.</h2>
+            <p class="lede" data-i18n="home.about">I’m a 2D animator and storyteller from Girona, passionate about creating expressive characters, compelling narratives and memorable visual experiences.</p>
         </div>
-
     </section>
 
-    <!-- SOFTWARE -->
-    <section class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="section-title"> SOFTWARE </h2>
-
-        <div class="skills-grid"> <span>Maya</span> <span>Photoshop</span> <span>Computer Animation</span>
-            <span>Krita</span> <span>Toon Boom Harmony</span>
+    <section id="portfolios" class="section--tight">
+        <div class="wrap">
+            <h2 class="section-title reveal" data-i18n="home.portfolios">Portfolios</h2>
+            <div class="card-grid">
+                <a href="animation.html" class="portfolio-card reveal">
+                    <div class="card-media"><picture>
+                <source type="image/webp" srcset="images/Animations/animation.webp">
+                <img src="images/Animations/animation.jpg" alt="Animation portfolio" width="623" height="386" loading="lazy" data-i18n-alt="alt.animCard">
+            </picture></div>
+                    <div class="card-body">
+                        <span class="tag" data-i18n="home.anim.tag">Animation</span>
+                        <h3 data-i18n="home.anim.title">Animation Portfolio</h3>
+                        <p data-i18n="home.anim.desc">Latest demo reel and current projects.</p>
+                    </div>
+                </a>
+                <a href="story-telling.html" class="portfolio-card reveal">
+                    <div class="card-media"><picture>
+                <source type="image/webp" srcset="images/Story-Telling/mayra_ref_edited.webp">
+                <img src="images/Story-Telling/mayra_ref_edited.png" alt="Storytelling" width="1432" height="1200" loading="lazy" data-i18n-alt="alt.storyCard">
+            </picture></div>
+                    <div class="card-body">
+                        <span class="tag" data-i18n="home.st.tag">Story-Telling</span>
+                        <h3 data-i18n="home.st.title">Story-Telling</h3>
+                        <p data-i18n="home.st.desc">Writing and narrative development.</p>
+                    </div>
+                </a>
+                <a href="storyboard.html" class="portfolio-card reveal">
+                    <div class="card-media"><picture>
+                <source type="image/webp" srcset="images/Storyboard/entre_mesas_ref_edited.webp">
+                <img src="images/Storyboard/entre_mesas_ref_edited.jpeg" alt="Storyboard" width="358" height="212" loading="lazy" data-i18n-alt="alt.sbCard">
+            </picture></div>
+                    <div class="card-body">
+                        <span class="tag" data-i18n="home.sb.tag">Storyboard</span>
+                        <h3 data-i18n="home.sb.title">Storyboard</h3>
+                        <p data-i18n="home.sb.desc">Storyboards and visual planning.</p>
+                    </div>
+                </a>
+                <a href="art.html" class="portfolio-card reveal">
+                    <div class="card-media"><picture>
+                <source type="image/webp" srcset="images/Art/art9.webp">
+                <img src="images/Art/art9.png" alt="Art" width="600" height="424" loading="lazy" data-i18n-alt="alt.artCard">
+            </picture></div>
+                    <div class="card-body">
+                        <span class="tag" data-i18n="home.art.tag">Art</span>
+                        <h3 data-i18n="home.art.title">Art Portfolio</h3>
+                        <p data-i18n="home.art.desc">Illustrations, concepts and visual work.</p>
+                    </div>
+                </a>
+            </div>
         </div>
-
     </section>
 
-    <!-- FOOTER -->
+    <section class="section">
+        <div class="wrap reveal">
+            <h2 class="section-title" data-i18n="home.software">Software</h2>
+            <div class="skills-grid">
+                <span>Maya</span>
+                <span>Photoshop</span>
+                <span>Krita</span>
+                <span>Toon Boom Harmony</span>
+            </div>
+        </div>
+    </section>
     <div id="footer"></div>
-    <script src="js/components.js"></script>
-</body>
 
+    <script src="js/i18n.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/ui.js" defer></script>
+</body>
 </html>
