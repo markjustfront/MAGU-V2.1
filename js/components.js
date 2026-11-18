@@ -3,14 +3,18 @@ async function loadComponents() {
     const navbar = await fetch('components/navbar.html');
     const footer = await fetch('components/footer.html');
 
-    document.getElementById('navbar').innerHTML =
-        await navbar.text();
+    const navbarEl = document.getElementById('navbar');
+    const footerEl = document.getElementById('footer');
 
-    document.getElementById('footer').innerHTML =
-        await footer.text();
+    if (navbarEl) {
+        navbarEl.innerHTML = await navbar.text();
+    }
+
+    if (footerEl) {
+        footerEl.innerHTML = await footer.text();
+    }
 
     setActiveLink();
-
     setupMobileMenu();
 }
 
@@ -21,59 +25,42 @@ function setupMobileMenu() {
 
     if (!toggle || !menu) return;
 
-    toggle.addEventListener("click", () => {
+    const setOpen = (open) => {
 
-        menu.classList.toggle("active");
+        menu.classList.toggle("active", open);
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
 
         const icon = toggle.querySelector("i");
+        if (!icon) return;
 
-        if (menu.classList.contains("active")) {
+        icon.classList.toggle("fa-bars", !open);
+        icon.classList.toggle("fa-xmark", open);
+    };
 
-            icon.classList.remove("fa-bars");
-            icon.classList.add("fa-xmark");
-
-        } else {
-
-            icon.classList.remove("fa-xmark");
-            icon.classList.add("fa-bars");
-
-        }
-
+    toggle.addEventListener("click", () => {
+        setOpen(!menu.classList.contains("active"));
     });
 
+    menu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => setOpen(false));
+    });
 }
 
 function setActiveLink() {
 
-    const currentPage =
-        window.location.pathname.split('/').pop();
+    const raw = window.location.pathname.split("/").pop();
+    const currentPage = raw || "index.html";
 
     document
-        .querySelectorAll('.navbar a')
+        .querySelectorAll(".navbar a")
         .forEach(link => {
 
-            if (link.getAttribute('href') === currentPage) {
+            if (link.getAttribute("href") === currentPage) {
 
-                link.classList.add('active');
-
+                link.classList.add("active");
+                link.setAttribute("aria-current", "page");
             }
-
         });
 }
-
-document.querySelectorAll('#navMenu a').forEach(link => {
-
-    link.addEventListener('click', () => {
-
-        menu.classList.remove('active');
-
-        const icon = toggle.querySelector('i');
-
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-
-    });
-
-});
 
 loadComponents();
