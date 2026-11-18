@@ -81,6 +81,18 @@ button {
     border: 0;
 }
 
+/* Keep intrinsic aspect ratio when width is constrained.
+   HTML width/height are hints only; without height:auto the
+   height attribute becomes the used CSS height and images stretch. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+picture {
+    display: block;
+    max-width: 100%;
+}
+
 .skip-link {
     position: absolute;
     left: 16px;
@@ -626,19 +638,12 @@ footer p {
 
 .project-image,
 .project-card > picture,
-.project-card > img,
-.project-card .project-image {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    display: block;
-    border-radius: var(--radius) var(--radius) 0 0;
-}
-
+.project-card > img:not(.wip-tag),
+.project-card .project-image,
 .project-card picture:not(.wip-tag) img {
     width: 100%;
-    height: 320px;
-    object-fit: cover;
+    height: auto;
+    display: block;
     border-radius: var(--radius) var(--radius) 0 0;
 }
 
@@ -653,6 +658,7 @@ footer p {
     margin: 12px 0 10px;
 }
 
+.project-card .wip-tag,
 .wip-tag {
     position: absolute;
     top: -16px;
@@ -785,7 +791,35 @@ footer p {
 
 .gallery img {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: 18px;
+}
+
+.gallery picture {
+    display: block;
+    width: 100%;
+}
+
+/* Three tall character sheets (Entre Mesas visual development) */
+.gallery--portraits {
+    columns: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+    max-width: 1100px;
+    margin-inline: auto;
+}
+.gallery--portraits figure {
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 700px) {
+    .gallery--portraits {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+    }
 }
 
 /* Lightbox */
@@ -812,9 +846,12 @@ footer p {
 }
 
 #lightbox img {
+    width: auto;
+    height: auto;
     max-width: 100%;
     max-height: 78vh;
     margin: 0 auto;
+    object-fit: contain;
     border-radius: 16px;
     box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
 }
@@ -880,8 +917,11 @@ footer p {
 .project-description p + p { margin-top: 1em; }
 
 .project-feature-image,
-.rounded-media img {
+.rounded-media img,
+.rounded-media picture img {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: var(--radius);
     box-shadow: var(--shadow-hover);
 }
@@ -932,6 +972,8 @@ footer p {
 
 .project-gallery img {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: 18px;
     box-shadow: var(--shadow);
     transition: transform 0.3s var(--ease);
@@ -979,7 +1021,7 @@ footer p {
     width: min(1400px, 100%);
     margin: 0 auto;
 }
-.project-hero .banner img { width: 100%; }
+.project-hero .banner img { width: 100%; height: auto; display: block; }
 
 .note-card {
     background: var(--white);
@@ -1212,6 +1254,8 @@ footer p {
 .stack picture img,
 img.rounded-media {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: 18px;
     box-shadow: var(--shadow);
 }
