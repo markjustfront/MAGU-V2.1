@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Animation | Mar Aguilar Serrats | MAGU</title>
-
-    
     <meta name="description" content="Animation portfolio of Mar Aguilar Serrats (MAGU), with a demo reel of character acting, body mechanics, performance and personal projects.">
     <meta property="og:title" content="Animation | Mar Aguilar Serrats | MAGU">
     <meta property="og:description" content="Animation portfolio of Mar Aguilar Serrats (MAGU), with a demo reel of character acting, body mechanics, performance and personal projects.">
@@ -17,182 +13,117 @@
     <meta name="twitter:description" content="Animation portfolio of Mar Aguilar Serrats (MAGU), with a demo reel of character acting, body mechanics, performance and personal projects.">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-<body>
-    <!-- NAVIGATION -->
+<body data-page="animation">
     <div id="navbar"></div>
 
-    <!-- HERO -->
     <section class="page-hero" id="main">
-        <div class="page-hero-content"> <span class="hero-label"> 2D Animation Portfolio </span>
-            <h1> Animation </h1>
-            <p> Character acting, body mechanics, performance and personal animation projects. </p>
+        <span class="hero-label" data-i18n="anim.label">2D Animation Portfolio</span>
+        <h1 data-i18n="anim.h1">Animation</h1>
+        <p data-i18n="anim.lead">Character acting, body mechanics, performance and personal animation projects.</p>
+    </section>
+
+    <section class="section">
+        <div class="wrap--m reveal">
+            <h2 class="section-title" data-i18n="anim.approach">My Approach</h2>
+            <p class="lede" data-i18n="anim.approachBody">I focus on character-driven animation, combining expressive performances, appealing posing and clear storytelling. My work explores acting, emotion, body mechanics and believable movement.</p>
         </div>
-
-    </section> 
-    
-    <!-- ABOUT -->
-    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 class="section-title"> My Approach </h2>
-        <p class="text-xl text-zinc-600 leading-relaxed"> I focus on character-driven animation, combining expressive
-            performances, appealing posing and clear storytelling. My work explores acting, emotion, body mechanics and
-            believable movement. </p>
-
-    </section> 
-    
-    <!-- DEMO REEL -->
-    <section class="max-w-6xl mx-auto px-6 py-12">
-        <h2 class="section-title"> Demo Reel </h2>
-        <div class="featured-video"> <video autoplay muted loop playsinline controls>
-                <source src="videos/demo-reel.mp4" type="video/mp4">
-            </video> </div>
-        <p class="video-description"> Latest demo reel showcasing acting, performance, body mechanics and animation
-            exercises. </p>
     </section>
 
-    <!-- SELECTED WORK -->
-    <section class="max-w-7xl mx-auto px-6 pb-10">
-        <h2 class="section-title"> Selected Work </h2>
-    </section>
-
-    <!-- CHARACTER ACTING -->
-    <section class="max-w-7xl mx-auto px-6 pb-24">
-        <h2 class="category-title"> Character Acting </h2>
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <article class="animation-card"> <video autoplay muted loop playsinline controls>
-                    <source src="videos/lackadaisy.mp4" type="video/mp4">
+    <section class="section--tight">
+        <div class="wrap">
+            <h2 class="section-title reveal" data-i18n="anim.reel">Demo Reel</h2>
+            <div class="featured-video reveal">
+                <video autoplay muted loop playsinline controls preload="metadata">
+                    <source src="videos/demo-reel.mp4" type="video/mp4">
                 </video>
-                <div class="p-6">
-                    <h3> Dialogue Performance </h3>
-                    <p> Dialogue-driven acting exercise focused on facial expressions, emotional beats, timing and
-                        character performance. </p>
-                    <div class="project-tags"> <span>Acting</span> <span>Lip Sync</span> <span>Performance</span> </div>
-                </div>
-            </article>
-
-            <article class="animation-card"> <video autoplay muted loop playsinline controls>
-                    <source src="videos/storyboard-demo-reel.mp4" type="video/mp4">
-                </video>
-                <div class="p-6">
-                    <h3> Storyboard Demo Reel </h3>
-                    <p> Dialogue-driven acting exercise focused on facial expressions, emotional beats, timing and
-                        character performance. </p>
-                    <div class="project-tags"> <span>Acting</span> <span>Lip Sync</span> <span>Performance</span> </div>
-                </div>
-            </article>
+            </div>
+            <p class="video-description" data-i18n="anim.reelDesc">Latest demo reel showcasing acting, performance, body mechanics and animation exercises.</p>
         </div>
     </section>
 
-    <!-- BODY MECHANICS -->
-
-    <section class="max-w-7xl mx-auto px-6 pb-24">
-
-        <h2 class="category-title text-center">
-            Body Mechanics
-        </h2>
-
-        <div class="phone-grid">
-
-            <!-- PROJECT 1 -->
-
-            <div class="phone-project">
-
-                <div class="phone-showcase">
-
-                    <div class="phone-frame">
-
-                        <div class="phone-notch"></div>
-
-                        <video autoplay muted loop playsinline controls>
-                            <source src="videos/2025.mp4" type="video/mp4">
-                        </video>
-
+    <section class="section--bottom">
+        <div class="wrap">
+            <h2 class="section-title reveal" data-i18n="anim.selected">Selected Work</h2>
+            <h3 class="category-title reveal" data-i18n="anim.acting">Character Acting</h3>
+            <div class="anim-grid">
+                <article class="animation-card reveal">
+                    <video autoplay muted loop playsinline controls preload="metadata">
+                        <source src="videos/lackadaisy.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 data-i18n="anim.dialogue.title">Dialogue Performance</h3>
+                        <p data-i18n="anim.dialogue.body">Dialogue-driven acting exercise focused on facial expressions, emotional beats, timing and character performance.</p>
+                        <div class="project-tags">
+                            <span data-i18n="tag.acting">Acting</span>
+                            <span data-i18n="tag.lipsync">Lip Sync</span>
+                            <span data-i18n="tag.performance">Performance</span>
+                        </div>
                     </div>
-
-                </div>
-
-                <div class="phone-content">
-
-                    <h3>
-                        Weight & Balance
-                    </h3>
-
-                    <p>
-                        Exercise exploring balance,
-                        weight distribution and
-                        believable physical movement.
-                    </p>
-
-                    <div class="project-tags">
-
-                        <span>Mechanics</span>
-                        <span>Weight</span>
-                        <span>Movement</span>
-
+                </article>
+                <article class="animation-card reveal">
+                    <video autoplay muted loop playsinline controls preload="metadata">
+                        <source src="videos/storyboard-demo-reel.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 data-i18n="anim.stbReel.title">Storyboard Demo Reel</h3>
+                        <p data-i18n="anim.stbReel.body">A demo reel of storyboard work.</p>
                     </div>
-
-                </div>
-
+                </article>
             </div>
-
-            <!-- PROJECT 2 -->
-
-            <div class="phone-project">
-
-                <div class="phone-showcase">
-
-                    <div class="phone-frame">
-
-                        <div class="phone-notch"></div>
-
-                        <video autoplay muted loop playsinline controls>
-                            <source src="videos/2025-2.mp4" type="video/mp4">
-                        </video>
-
-                    </div>
-
-                </div>
-
-                <div class="phone-content">
-
-                    <h3>
-                        Run Cycle
-                    </h3>
-
-                    <p>
-                        Study focused on rhythm,
-                        locomotion and believable
-                        character movement.
-                    </p>
-
-                    <div class="project-tags">
-
-                        <span>Run Cycle</span>
-                        <span>Timing</span>
-                        <span>Motion</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
         </div>
-
     </section>
 
-    <!-- FOOTER -->
+    <section class="section--bottom">
+        <div class="wrap">
+            <h3 class="category-title reveal" data-i18n="anim.mechanics">Body Mechanics</h3>
+            <div class="phone-grid">
+                <div class="phone-project reveal">
+                    <div class="phone-showcase">
+                        <div class="phone-frame">
+                            <video autoplay muted loop playsinline controls preload="metadata">
+                                <source src="videos/2025.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="phone-content">
+                        <h3 data-i18n="anim.weight.title">Weight &amp; Balance</h3>
+                        <p data-i18n="anim.weight.body">Exercise exploring balance, weight distribution and believable physical movement.</p>
+                        <div class="project-tags" style="justify-content:center">
+                            <span data-i18n="tag.mechanics">Mechanics</span>
+                            <span data-i18n="tag.weight">Weight</span>
+                            <span data-i18n="tag.movement">Movement</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="phone-project reveal">
+                    <div class="phone-showcase">
+                        <div class="phone-frame">
+                            <video autoplay muted loop playsinline controls preload="metadata">
+                                <source src="videos/2025-2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="phone-content">
+                        <h3 data-i18n="anim.run.title">Run Cycle</h3>
+                        <p data-i18n="anim.run.body">Study focused on rhythm, locomotion and believable character movement.</p>
+                        <div class="project-tags" style="justify-content:center">
+                            <span data-i18n="tag.runcycle">Run Cycle</span>
+                            <span data-i18n="tag.timing">Timing</span>
+                            <span data-i18n="tag.motion">Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div id="footer"></div>
 
-    <script src="js/components.js"></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/components.js" defer></script>
+    <script src="js/lightbox.js" defer></script>
+    <script src="js/ui.js" defer></script>
 </body>
+</html>
