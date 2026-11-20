@@ -51,6 +51,10 @@ video {
     display: block;
 }
 
+video {
+    height: auto;
+}
+
 picture {
     width: 100%;
 }
@@ -1447,3 +1451,59 @@ img.rounded-media {
 .cv-timeline--compact .cv-item h4 { font-size: 1.05rem; }
 .cv-home { margin-top: 56px; }
 .cv-home .section-title { margin-bottom: 36px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+
+/* Wix port: painted banner, short clips, episode examples, genre line */
+.painted-band {
+    margin-bottom: 56px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--paper-2);
+}
+.painted-band img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1600 / 537;
+    object-fit: cover;
+}
+.anim-grid--three { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.animation-card video { aspect-ratio: 16 / 9; height: auto; object-fit: cover; }
+.genre-line {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue-dark);
+}
+.episode-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+.episode-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 28px 28px 30px;
+}
+.episode-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+.episode-card p { color: var(--muted); margin-top: 10px; line-height: 1.7; }
+.project-card .wip-tag,
+.wip-tag { width: 96px; }
+@media (max-width: 1100px) {
+    .anim-grid--three { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
+    .anim-grid--three,
+    .episode-list { grid-template-columns: 1fr; }
+    .painted-band { margin-bottom: 40px; }
+}
+@media (max-width: 640px) {
+    .project-card .wip-tag,
+    .wip-tag { width: 76px; left: -10px; top: -12px; }
+}
