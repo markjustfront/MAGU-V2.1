@@ -575,6 +575,29 @@ footer p {
     font-size: 0.9rem;
 }
 
+.footer-dev {
+    margin-top: 28px;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+}
+
+.footer-dev a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.25s, outline-color 0.25s;
+}
+
+.footer-dev a:hover,
+.footer-dev a:focus-visible {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-dev a:focus-visible {
+    outline: 1px solid rgba(255, 255, 255, 0.7);
+    outline-offset: 3px;
+}
+
 /* Page heroes */
 .page-hero {
     position: relative;
