@@ -2,8 +2,10 @@
     "use strict";
 
     /* Full-screen MAGU logo overlay.
-       Shown on first paint (via the inline boot script) and again when
-       following an internal link. Hidden after a short minimum time, or
+       Shown once on the first page load of a session (via the inline
+       boot script, which also reads sessionStorage before paint so
+       later pages do not flash the overlay). Later page loads and
+       internal clicks skip it. Hidden after a short minimum time, or
        by a hard fallback so it can never stick. */
     var MIN_MS = 500;
     var FADE_MS = 350;
@@ -11,12 +13,34 @@
     var html = document.documentElement;
     var params = new URLSearchParams(window.location.search);
     var skipLoader = params.get("loader") === "0";
+    var forceLoader = params.get("loader") === "1";
     var freeze = params.get("freeze");
+    var STORAGE_KEY = "magu-loader";
     var hideTimer = 0;
     var fadeTimer = 0;
     var fallbackTimer = 0;
     var hidden = false;
     var startedAt = (window.performance && performance.now) ? performance.now() : Date.now();
+
+    function hasSeenLoader() {
+        try {
+            return sessionStorage.getItem(STORAGE_KEY) === "1";
+        } catch (e) {
+            return false;
+        }
+    }
+
+    function markLoaderSeen() {
+        try {
+            sessionStorage.setItem(STORAGE_KEY, "1");
+        } catch (e) {}
+    }
+
+    function skipForSession() {
+        if (forceLoader) return false;
+        if (freeze !== null && freeze !== "") return false;
+        return hasSeenLoader();
+    }
 
     function reducedMotion() {
         try {
@@ -136,7 +160,7 @@
     }
 
     function onNavigateClick(event) {
-        if (skipLoader || reducedMotion()) return;
+        if (skipLoader || reducedMotion() || skipForSession()) return;
         var anchor = event.target && event.target.closest ? event.target.closest("a[href]") : null;
         if (!isInternalNavLink(anchor, event)) return;
         showLoader(true);
@@ -150,8 +174,6 @@
         }
     });
 
-    document.addEventListener("click", onNavigateClick, true);
-
     if (freeze !== null && freeze !== "") {
         html.classList.add("is-loading");
         html.setAttribute("data-freeze", freeze);
@@ -159,10 +181,15 @@
         return;
     }
 
-    if (skipLoader || reducedMotion()) {
+    if (skipLoader || reducedMotion() || skipForSession()) {
         hideLoader(true);
         return;
     }
+
+    /* Remember this visit before any later click or next page load. */
+    markLoaderSeen();
+
+    /* Do not intercept internal clicks: the overlay is first-load only. */
 
     if (!html.classList.contains("is-loading")) {
         html.classList.add("is-loading");

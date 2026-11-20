@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preload" href="images/Home/magu.webp" as="image" type="image/webp">
     <script>
-      /* Show the logo overlay before the first paint. Keep in sync with js/loader.js. */
+      /* Show the logo overlay before the first paint, only on the first
+         page of a visit. Keep in sync with js/loader.js. */
       (function () {
         try {
           var html = document.documentElement;
@@ -25,12 +26,16 @@
           var q = location.search;
           if (/(?:\?|&)loader=0(?:&|$)/.test(q)) return;
           if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-          html.classList.add("is-loading");
           var freeze = /(?:\?|&)freeze=([0-9]*\.?[0-9]+)(?:&|$)/.exec(q);
           if (freeze) {
+            html.classList.add("is-loading");
             html.setAttribute("data-freeze", freeze[1]);
             html.style.setProperty("--freeze", "-" + freeze[1] + "s");
+            return;
           }
+          var force = /(?:\?|&)loader=1(?:&|$)/.test(q);
+          if (!force && sessionStorage.getItem("magu-loader") === "1") return;
+          html.classList.add("is-loading");
         } catch (e) {}
       })();
     </script>
