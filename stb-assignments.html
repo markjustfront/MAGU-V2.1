@@ -22,7 +22,7 @@
     <section class="project-hero" id="main">
         <div class="banner">
             <picture>
-                <source type="image/webp" srcset="images/Storyboard/cover.webp">
+                <source type="image/webp" srcset="images/Storyboard/cover-800.webp 800w, images/Storyboard/cover-1600.webp 1600w, images/Storyboard/cover-2400.webp 2400w" sizes="(max-width: 1400px) 100vw, 1400px">
                 <img src="images/Storyboard/cover.png" alt="Storyboard assignments" width="1920" height="481" loading="eager" fetchpriority="high" data-i18n-alt="alt.asCover">
             </picture>
         </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="rounded-media reveal">
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/art3.webp">
+                <source type="image/webp" srcset="images/Story-Telling/Entre-Mesas/art3-800.webp 800w, images/Story-Telling/Entre-Mesas/art3-1380.webp 1380w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/art3.png" alt="Storyboard cover" width="236" height="284" loading="lazy" data-i18n-alt="alt.asChar">
             </picture>
                 </div>
@@ -46,7 +46,7 @@
         <div class="wrap--m">
             <h2 class="section-title reveal" data-i18n="as.reel">Storyboard Demo Reel</h2>
             <div class="featured-video reveal">
-                <video controls preload="metadata">
+                <video controls playsinline preload="metadata" poster="images/posters/storyboard-demo-reel.jpg" width="1920" height="1080">
                     <source src="videos/storyboard-demo-reel.mp4" type="video/mp4">
                 </video>
             </div>
@@ -62,11 +62,11 @@
                 </div>
                 <div class="stack reveal">
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/crush-1.webp">
+                <source type="image/webp" srcset="images/Storyboard/crush-1-800.webp 800w, images/Storyboard/crush-1-1600.webp 1600w, images/Storyboard/crush-1-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/crush-1.png" alt="Kim Possible Crush storyboard, sheet 1" width="593" height="418" loading="lazy" data-i18n-alt="alt.crush1" class="rounded-media">
             </picture>
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/crush-2.webp">
+                <source type="image/webp" srcset="images/Storyboard/crush-2-800.webp 800w, images/Storyboard/crush-2-1600.webp 1600w, images/Storyboard/crush-2-2400.webp 2400w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/crush-2.png" alt="Kim Possible Crush storyboard, sheet 2" width="593" height="418" loading="lazy" data-i18n-alt="alt.crush2" class="rounded-media">
             </picture>
                 </div>
@@ -83,15 +83,15 @@
                 </div>
                 <div class="stack reveal">
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/devils-1.webp">
+                <source type="image/webp" srcset="images/Storyboard/devils-1-800.webp 800w, images/Storyboard/devils-1-1600.webp 1600w, images/Storyboard/devils-1-1920.webp 1920w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/devils-1.jpeg" alt="Blessed Devils sequence 008 storyboard, sheet 1" width="600" height="337" loading="lazy" data-i18n-alt="alt.devils1">
             </picture>
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/devils-2.webp">
+                <source type="image/webp" srcset="images/Storyboard/devils-2-800.webp 800w, images/Storyboard/devils-2-1600.webp 1600w, images/Storyboard/devils-2-1920.webp 1920w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/devils-2.png" alt="Blessed Devils sequence 008 storyboard, sheet 2" width="577" height="316" loading="lazy" data-i18n-alt="alt.devils2">
             </picture>
                     <picture>
-                <source type="image/webp" srcset="images/Storyboard/devils-3.webp">
+                <source type="image/webp" srcset="images/Storyboard/devils-3-800.webp 800w, images/Storyboard/devils-3-1600.webp 1600w, images/Storyboard/devils-3-1920.webp 1920w" sizes="(max-width: 900px) 100vw, 560px">
                 <img src="images/Storyboard/devils-3.png" alt="Blessed Devils sequence 008 storyboard, sheet 3" width="600" height="337" loading="lazy" data-i18n-alt="alt.devils3">
             </picture>
                 </div>
@@ -104,12 +104,21 @@
             <h2 class="section-title reveal" data-i18n="as.related">Related Projects</h2>
             <div class="anim-grid">
                 <article class="animation-card reveal">
-                    <video autoplay muted loop playsinline controls preload="metadata">
-                        <source src="videos/storyboard-demo-reel.mp4" type="video/mp4">
+                    <video controls playsinline preload="metadata" poster="images/posters/entre-mesas-teaser.jpg" width="1920" height="1080">
+                        <source src="videos/entre-mesas-teaser.mp4" type="video/mp4">
                     </video>
                     <div class="card-body">
                         <h3 data-i18n="as.entre.title">Entre Mesas</h3>
                         <p data-i18n="as.entre.body">Storyboard teaser sequence.</p>
+                    </div>
+                </article>
+                <article class="animation-card reveal">
+                    <video controls playsinline preload="metadata" poster="images/posters/nebulosa-gourmet-teaser.jpg" width="1920" height="1080">
+                        <source src="videos/nebulosa-gourmet-teaser.mp4" type="video/mp4">
+                    </video>
+                    <div class="card-body">
+                        <h3 data-i18n="as.nebulosa.title">Nebulosa Gourmet</h3>
+                        <p data-i18n="as.nebulosa.body">Storyboard teaser sequence, from rough boards to colour animatic.</p>
                     </div>
                 </article>
             </div>

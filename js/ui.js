@@ -25,8 +25,39 @@
         nodes.forEach((n) => io.observe(n));
     }
 
+    /* Short clips: play muted while on screen, pause when scrolled away. */
+    function initAutoplayOnView() {
+        const clips = document.querySelectorAll("video[data-autoplay-view]");
+        if (!clips.length) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    if (video.dataset.userPaused === "true") return;
+                    if (video.preload === "none") video.preload = "auto";
+                    video.muted = true;
+                    const p = video.play();
+                    if (p && p.catch) p.catch(() => {});
+                } else if (!video.paused) {
+                    video.dataset.autoPaused = "true";
+                    video.pause();
+                }
+            });
+        }, { threshold: 0.5 });
+        clips.forEach((video) => {
+            video.addEventListener("pause", () => {
+                if (video.dataset.autoPaused === "true") { video.dataset.autoPaused = ""; return; }
+                video.dataset.userPaused = "true";
+            });
+            video.addEventListener("play", () => { video.dataset.userPaused = ""; });
+            io.observe(video);
+        });
+    }
+
     async function boot() {
         respectReducedMotion();
+        initAutoplayOnView();
         if (typeof loadComponents === "function") {
             await loadComponents();
         }
