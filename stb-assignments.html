@@ -15,8 +15,35 @@
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preload" href="images/Home/magu.webp" as="image" type="image/webp">
+    <script>
+      /* Show the logo overlay before the first paint. Keep in sync with js/loader.js. */
+      (function () {
+        try {
+          var html = document.documentElement;
+          html.classList.add("js");
+          var q = location.search;
+          if (/(?:\?|&)loader=0(?:&|$)/.test(q)) return;
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          html.classList.add("is-loading");
+          var freeze = /(?:\?|&)freeze=([0-9]*\.?[0-9]+)(?:&|$)/.exec(q);
+          if (freeze) {
+            html.setAttribute("data-freeze", freeze[1]);
+            html.style.setProperty("--freeze", "-" + freeze[1] + "s");
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <script src="js/loader.js" defer></script>
 </head>
 <body data-page="assignments">
+    <div id="loader" class="loader" aria-hidden="true">
+        <picture>
+            <source type="image/webp" srcset="images/Home/magu.webp">
+            <img class="loader-mark" src="images/Home/magu.png" alt="" width="300" height="155">
+        </picture>
+    </div>
+
     <div id="navbar"></div>
 
     <section class="project-hero" id="main">
