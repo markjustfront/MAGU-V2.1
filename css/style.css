@@ -1346,6 +1346,12 @@ footer p {
         transition: none !important;
     }
     .reveal { opacity: 1; transform: none; }
+    html.is-loading .loader,
+    .loader {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+    }
 }
 
 .page-block {
@@ -1506,4 +1512,102 @@ img.rounded-media {
 @media (max-width: 640px) {
     .project-card .wip-tag,
     .wip-tag { width: 76px; left: -10px; top: -12px; }
+}
+
+
+/* ── Page loader ───────────────────────────────────────────────
+   Full-screen MAGU wordmark between pages. Hidden for
+   prefers-reduced-motion (see the reduce block above). */
+
+html.is-loading {
+    background: #111;
+}
+
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    background: #111;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s var(--ease), visibility 0.35s var(--ease);
+}
+
+html.is-loading .loader {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+html.is-loading.is-loader-out .loader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Cover instantly when leaving for another internal page. */
+html.is-leaving .loader {
+    transition: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.loader picture {
+    width: auto;
+    max-width: min(240px, 62vw);
+    display: block;
+}
+
+.loader-mark {
+    width: min(240px, 62vw);
+    height: auto;
+    display: block;
+    opacity: 0;
+    transform: scale(0.92);
+    filter: drop-shadow(0 0 0 rgba(246, 194, 92, 0));
+}
+
+html.is-loading .loader-mark {
+    animation: loader-logo-in 0.45s var(--ease) forwards;
+}
+
+html.is-leaving .loader-mark {
+    animation: none;
+    opacity: 1;
+    transform: none;
+    filter: drop-shadow(0 12px 28px rgba(246, 194, 92, 0.22));
+}
+
+@keyframes loader-logo-in {
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+        filter: drop-shadow(0 0 0 rgba(246, 194, 92, 0));
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+        filter: drop-shadow(0 12px 28px rgba(246, 194, 92, 0.22));
+    }
+}
+
+/* Freeze a frame of the intro for screenshots (?freeze=0.3).
+   --freeze is a negative time set by the boot script. */
+html[data-freeze] .loader,
+html[data-freeze].is-loading .loader {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transition: none !important;
+    pointer-events: auto;
+}
+
+html[data-freeze] .loader-mark,
+html[data-freeze].is-loading .loader-mark {
+    animation: loader-logo-in 0.45s var(--ease) forwards;
+    animation-delay: var(--freeze, 0s);
+    animation-play-state: paused !important;
 }
