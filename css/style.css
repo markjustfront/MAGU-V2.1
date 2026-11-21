@@ -181,14 +181,26 @@ picture {
 }
 
 .navbar {
+    position: relative;
+    z-index: 1000;
     display: flex;
     align-items: center;
     gap: 24px;
     padding: 14px 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* The blur lives on a pseudo-element: backdrop-filter on .navbar itself
+   would trap the fixed mobile menu inside the header box. */
+.navbar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
     background: var(--nav-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
 }
 
 .nav-brand {
