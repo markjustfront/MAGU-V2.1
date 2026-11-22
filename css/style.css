@@ -865,6 +865,9 @@ footer p {
     width: auto;
     flex: 0 1 auto;
 }
+.gallery--portraits picture {
+    width: auto;
+}
 .gallery--portraits button {
     width: auto;
     background: transparent;
